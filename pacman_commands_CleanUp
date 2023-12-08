@@ -1,0 +1,6 @@
+List unused:
+$ sudo pacman -Qtdq
+
+Remove:
+$ sudo pacman -R $(pacman -Qtdq)
+
