@@ -1,0 +1,28 @@
+$ sudo pacman -Rdd pulseaudio
+
+$ sudo pacman -S pipewire-{jack,alsa,pulse}
+
+$ systemctl --user enable --now pipewire pipewire-pulse pipewire-media-session
+
+$ pacman -S alsa-utils
+
+$ pacman -S alsa-plugins
+
+$ amixer sset Master unmute
+
+$ pacman -Sy alsa-utils pulseaudio
+
+$ sudo nano /etc/asound.conf
+
+  pcm.!default {
+  type hw
+  card 1
+  device 0
+}
+ctl.!default {
+  type hw
+  card 1
+  device 0
+}
+
+
